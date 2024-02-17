@@ -38,18 +38,18 @@ open.ImageTransparency = 1.000
 local function QLBG_fake_script() -- open.LocalScript 
 	local script = Instance.new('LocalScript', open)
 
-	
-	local TweenService = game:GetService("TweenService")
-	
-	local gui = script.Parent.Parent.open -- استبدل "YourLoadingGui" بـ اسم GUI الخاص بك
-	
-	gui.Visible = true -- إظهار الـ GUI بشكل افتراضي
-	
-	wait(2)
-	-- Animation: Fade In
-	local targetTransparency = -1 -- شفافية الهدف للـ GUI (شفافية كاملة)
-	local tweenInfo = TweenInfo.new(2) -- تحديد مدة الـ tween
-	local tween = TweenService:Create(gui, tweenInfo, {ImageTransparency = targetTransparency}) -- تحريك خاصية BackgroundTransparency
-	tween:Play()
+
+local TweenService = game:GetService("TweenService")
+
+local gui = script.Parent.Parent.open -- استبدل "YourLoadingGui" بـ اسم GUI الخاص بك
+
+gui.Visible = true -- إظهار الـ GUI بشكل افتراضي
+
+wait(5)
+-- Animation: Fade In
+local targetTransparency = -1 -- شفافية الهدف للـ GUI (شفافية كاملة)
+local tweenInfo = TweenInfo.new(0.5) -- تحديد مدة الـ tween
+local tween = TweenService:Create(gui, tweenInfo, {ImageTransparency = targetTransparency}) -- تحريك خاصية BackgroundTransparency
+tween:Play()
 end
 coroutine.wrap(QLBG_fake_script)()
