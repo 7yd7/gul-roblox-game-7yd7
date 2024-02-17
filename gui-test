@@ -1,0 +1,55 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local _7yd7 = Instance.new("ScreenGui")
+local openFrame = Instance.new("Frame")
+local open = Instance.new("ImageButton")
+
+--Properties:
+
+_7yd7.Name = "7yd7"
+_7yd7.Parent = game.CoreGui
+_7yd7.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+openFrame.Name = "openFrame"
+openFrame.Parent = _7yd7
+openFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+openFrame.BackgroundTransparency = 1.000
+openFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+openFrame.BorderSizePixel = 0
+openFrame.Position = UDim2.new(0.0147819659, 0, 0.939205945, 0)
+openFrame.Size = UDim2.new(0.0221729483, 0, 0.0421836227, 0)
+
+open.Name = "open"
+open.Parent = openFrame
+open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+open.BackgroundTransparency = 1.000
+open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+open.BorderSizePixel = 0
+open.Position = UDim2.new(-0.300000012, 0, -0.155294985, 0)
+open.Size = UDim2.new(1.33544993, 0, 1.27802408, 0)
+open.Image = "rbxassetid://14659873948"
+open.ImageTransparency = 1.000
+
+-- Scripts:
+
+local function QLBG_fake_script() -- open.LocalScript 
+	local script = Instance.new('LocalScript', open)
+
+	
+	local TweenService = game:GetService("TweenService")
+	
+	local gui = script.Parent.Parent.open -- استبدل "YourLoadingGui" بـ اسم GUI الخاص بك
+	
+	gui.Visible = true -- إظهار الـ GUI بشكل افتراضي
+	
+	wait(2)
+	-- Animation: Fade In
+	local targetTransparency = -1 -- شفافية الهدف للـ GUI (شفافية كاملة)
+	local tweenInfo = TweenInfo.new(2) -- تحديد مدة الـ tween
+	local tween = TweenService:Create(gui, tweenInfo, {ImageTransparency = targetTransparency}) -- تحريك خاصية BackgroundTransparency
+	tween:Play()
+end
+coroutine.wrap(QLBG_fake_script)()
