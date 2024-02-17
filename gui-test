@@ -10,7 +10,7 @@ local open = Instance.new("ImageButton")
 --Properties:
 
 _7yd7.Name = "7yd7"
-_7yd7.Parent = game.CoreGui
+_7yd7.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 _7yd7.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 openFrame.Name = "openFrame"
@@ -39,17 +39,17 @@ local function QLBG_fake_script() -- open.LocalScript
 	local script = Instance.new('LocalScript', open)
 
 
-local TweenService = game:GetService("TweenService")
+	local TweenService = game:GetService("TweenService")
 
-local gui = script.Parent.Parent.open -- استبدل "YourLoadingGui" بـ اسم GUI الخاص بك
+	local gui = script.Parent.Parent.open -- استبدل "YourLoadingGui" بـ اسم GUI الخاص بك
 
-gui.Visible = true -- إظهار الـ GUI بشكل افتراضي
+	gui.Visible = true -- إظهار الـ GUI بشكل افتراضي
 
-wait(5)
--- Animation: Fade In
-local targetTransparency = -1 -- شفافية الهدف للـ GUI (شفافية كاملة)
-local tweenInfo = TweenInfo.new(0.5) -- تحديد مدة الـ tween
-local tween = TweenService:Create(gui, tweenInfo, {ImageTransparency = targetTransparency}) -- تحريك خاصية BackgroundTransparency
-tween:Play()
+	wait(5)
+	-- Animation: Fade In
+	local targetTransparency = -1 -- شفافية الهدف للـ GUI (شفافية كاملة)
+	local tweenInfo = TweenInfo.new(0.5) -- تحديد مدة الـ tween
+	local tween = TweenService:Create(gui, tweenInfo, {ImageTransparency = targetTransparency}) -- تحريك خاصية BackgroundTransparency
+	tween:Play()
 end
 coroutine.wrap(QLBG_fake_script)()
