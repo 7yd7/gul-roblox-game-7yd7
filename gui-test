@@ -10,7 +10,7 @@ local open = Instance.new("ImageButton")
 --Properties:
 
 _7yd7.Name = "7yd7"
-_7yd7.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+_7yd7.Parent = game.CoreGui
 _7yd7.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 openFrame.Name = "openFrame"
